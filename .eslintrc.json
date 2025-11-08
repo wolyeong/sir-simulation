@@ -1,0 +1,78 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@next/next/recommended",
+    "plugin:prettier/recommended",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "simple-import-sort",
+    "import"
+  ],
+  "rules": {
+    "prefer-const": "off", //letの使用を許可
+    "no-unused-vars": "warn", // 未使用の変数を許可
+    "@typescript-eslint/no-var-requires": "warn", // requireの使用を警告
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "off", // !での値の取得を許可
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": [
+      "warn",
+      {
+        "ignoreRestArgs": false
+      }
+    ],
+    "import/order": [
+      "off",
+      {
+        "groups": [
+          [
+            "builtin",
+            "external",
+            "internal"
+          ]
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  }
+}
